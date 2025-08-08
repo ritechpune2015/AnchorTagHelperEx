@@ -1,0 +1,54 @@
+﻿@model Customer
+@* @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers *@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title> Customer Form </title>
+    </head>
+    <body>
+        <h2> New Customer Form</h2>
+       <form>
+           <div>
+               <label asp-for="CustomerName"></label>
+               <div>
+                   <input asp-for="CustomerName" />
+               </div>
+           </div>
+           <div>
+               <label asp-for="Email"></label>
+               <div>
+                   <input asp-for="Email" />
+               </div>
+           </div>
+           <div>
+               <label asp-for="IsActive"></label>
+               <div>
+                   <input asp-for="IsActive" />
+               </div>
+           </div>
+           <div>
+               <label>Select City</label>
+               <div>
+                <select asp-for="CityID" asp-items="ViewBag.Cities">
+                     <option>Select City</option>
+                </select>
+               </div>
+           </div>
+           <div>
+               <label asp-for="Address"></label>
+               <div>
+                   <textarea asp-for="Address"> </textarea>
+               </div>
+           </div>
+           <div>
+               <label asp-for="Password"></label>
+               <div>
+                   <input type="password" asp-for="Password" />
+               </div>
+           </div>
+           <div>
+               <input type="submit" value="Save" />
+           </div>
+       </form>
+    </body>
+    </html>
