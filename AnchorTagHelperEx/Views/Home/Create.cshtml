@@ -4,22 +4,36 @@
     <html>
     <head>
         <title> Customer Form </title>
+     <script src="~/jquery/jquery.js"></script>
+     <script src="~/jquery-validate/jquery.validate.js"></script>
+     <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </head>
     <body>
         <h2> New Customer Form</h2>
-       <form>
+       <form asp-controller="Home" asp-action="Create" method="post">
+           <div asp-validation-summary="None">
+           </div>
            <div>
                <label asp-for="CustomerName"></label>
                <div>
                    <input asp-for="CustomerName" />
+                   <span asp-validation-for="CustomerName"></span>
                </div>
            </div>
            <div>
                <label asp-for="Email"></label>
                <div>
                    <input asp-for="Email" />
+                   <span asp-validation-for="Email"></span>
                </div>
            </div>
+        <div>
+            <label asp-for="MobileNo"></label>
+            <div>
+                <input asp-for="MobileNo" />
+                <span asp-validation-for="MobileNo"></span>
+            </div>
+        </div>
            <div>
                <label asp-for="IsActive"></label>
                <div>
@@ -27,23 +41,42 @@
                </div>
            </div>
            <div>
-               <label>Select City</label>
+               <label asp-for="CityID"></label>
                <div>
                 <select asp-for="CityID" asp-items="ViewBag.Cities">
                      <option>Select City</option>
                 </select>
+                <span asp-validation-for="CityID"></span>
                </div>
            </div>
            <div>
                <label asp-for="Address"></label>
                <div>
                    <textarea asp-for="Address"> </textarea>
+                   <span asp-validation-for="Address"></span>
                </div>
            </div>
            <div>
                <label asp-for="Password"></label>
                <div>
-                   <input type="password" asp-for="Password" />
+                   <input  asp-for="Password" />
+                   <span asp-validation-for="Password"></span>
+               </div>
+           </div>
+        <div>
+            <label asp-for="ConfirmPassword"></label>
+            <div>
+                <input asp-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+        </div>
+           <div>
+               <label asp-for="Category"></label>
+               <div>
+                <select asp-for="Category" asp-items="Html.GetEnumSelectList<CustomerCategoryEnum>()">
+                    <option> Select </option>
+                </select>
+                <span asp-validation-for="Category"></span>
                </div>
            </div>
            <div>
