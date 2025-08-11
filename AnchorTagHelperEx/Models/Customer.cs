@@ -35,5 +35,7 @@ namespace AnchorTagHelperEx.Models
 		[DataType(DataType.Password)]
 		[Compare("Password",ErrorMessage ="Password and Confirm Password are not Same!")]
 		public string ConfirmPassword { get; set; }
+		[EvenVal(ErrorMessage ="Credit Limit Should be Even!")]
+		public decimal CreditLimit { get; set; }
 	}
 }

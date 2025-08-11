@@ -26,6 +26,16 @@ namespace AnchorTagHelperEx.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+
+				//if (rec.CreditLimit % 2 != 0)
+				//{
+				//	//ModelState.AddModelError("CreditLimit","Credit Limit Should be Even!");
+
+				//	ModelState.AddModelError("", "Credit Limit Should be Even!");
+
+				//	return View(rec);
+				//}
+
 				//save code 
 				return RedirectToAction("Index");
 			}
